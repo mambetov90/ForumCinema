@@ -19,7 +19,7 @@ public class ModifyProfileDataTest {
         common.setUp();
         common.openApplication();
         homePage.populateLoginForm(EMAIL, PASSWORD);
-        profilePage.editProfile(profilePage.generateRandomString(), profilePage.generateRandomString(), profilePage.generateRandomNumber(1, 28), profilePage.selectRandomMonth(), profilePage.generateRandomNumber(1945, 2020));
+        profilePage.editProfile(profilePage.generateRandomString(), profilePage.generateRandomString(), profilePage.generateRandomNumber(1, 20), profilePage.selectRandomMonth(), profilePage.generateRandomNumber(1945, 2020));
         assertTrue(profilePage.getNotificationMsg());
         common.tearDown();
     }

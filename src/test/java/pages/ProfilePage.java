@@ -53,7 +53,7 @@ public class ProfilePage extends Common {
     }
 
     public String selectRandomMonth() {
-        String[] months = {"Janvāris","Februāris","Marts","Aprīlis","Maijs","Jūnijs","Jūlijs","Avgusts", "Septembris", "Oktobris", " Novembris", "Decembris"};
+        String[] months = {"Janvāris","Februāris","Marts","Aprīlis","Maijs","Jūnijs","Jūlijs","Augusts", "Septembris", "Oktobris", " Novembris", "Decembris"};
         int month = new Random().nextInt(months.length);
         String randomMonth = (months[month]);
         return randomMonth;

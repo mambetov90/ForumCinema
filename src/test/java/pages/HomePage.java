@@ -13,7 +13,6 @@ public class HomePage extends Common {
 
     public void populateLoginForm(String username, String pwd) throws InterruptedException {
         driver.findElement(login).click();
-        Thread.sleep(4000);
         populateForm(USERNAME, username);
         populateForm(PASSWORD, pwd);
         driver.findElement(LOGIN).sendKeys(Keys.ENTER);
