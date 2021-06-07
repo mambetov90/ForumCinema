@@ -11,11 +11,11 @@ import java.util.Random;
 
 public class ProfilePage extends Common {
 
-    private static final By EDIT_PROFILE = By.cssSelector("div[class*=\"log-out-container\"] a[href=\"/mypage/profile/\"]");
-    private static final By NAVIGATE_TO_PROFILE = By.cssSelector("a[class=\"navbar-link\"]");
+    public static final By EDIT_PROFILE = By.cssSelector("div[class*=\"log-out-container\"] a[href=\"/mypage/profile/\"]");
+    public static final By NAVIGATE_TO_PROFILE = By.cssSelector("a[class=\"navbar-link\"]");
     private static final By FIRST_NAME = By.id("inputFirstName");
     private static final By LAST_NAME = By.id("inputLastName");
-    private static final By SAVE_CHANGES = By.xpath("//button[@class=\"btn btn-primary\"]//span");
+    public static final By SAVE_CHANGES = By.xpath("//button[@class=\"btn btn-primary\"]//span");
 
     public void editProfile(String name, String surname, String day, String month, String year) {
         driver.findElement(NAVIGATE_TO_PROFILE).click();
@@ -25,6 +25,16 @@ public class ProfilePage extends Common {
         setDOB(day, month, year);
         scrollIntoTheView();
         driver.findElement(SAVE_CHANGES).click();
+    }
+
+    public void changeData(String value) {
+        driver.findElement(FIRST_NAME).clear();
+        driver.findElement(FIRST_NAME).sendKeys(value);
+    }
+
+    public void changeLastname(String value) {
+        driver.findElement(LAST_NAME).clear();
+        driver.findElement(LAST_NAME).sendKeys(value);
     }
 
     public void setDOB(String day, String month, String year) {
